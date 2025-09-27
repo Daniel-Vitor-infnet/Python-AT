@@ -1,6 +1,8 @@
 ARQ = "C:/Users/NoobSupremo/Desktop/Backup (Pc)/Faculdade/Python/Programação com Python [25E3_2] (1º trimestre)/Projetos/Python-AT/produtos.csv"
 
 def ler_arquivo():
+
+
     produtos = []
     try:
         with open(ARQ, "r", encoding="utf-8") as arquivo:
