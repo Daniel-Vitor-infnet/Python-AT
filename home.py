@@ -4,12 +4,15 @@ import utils.tools as tools
 estoque = crud.ler_arquivo()
 cliente_num = 0
 
-tools.exibir_estoque(estoque)
+# tools.exibir_estoque(estoque)
 
-print("""
-[1] - Cadastrar Produto
-[2] - Listar Produtos
-[3] - Atualizar Produto
-[4] - Deletar Produto
-[0] - Sair
-""")
+print("====== ATENDIMENTO INICIADO ======")
+
+#  while True:
+#      cliente_num += 1
+#      print(f"Cliente número: {cliente_num}")
+#      id_procuto = tools.verificar_id()
+#      qtd_produto = tools.verificar_estoque()
+     
+tools.confirmar_compra(estoque)
+

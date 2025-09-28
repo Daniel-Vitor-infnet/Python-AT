@@ -1,0 +1,53 @@
+1. Crie um diretório para armazenar todos os programas e arquivos desenvolvidos neste projeto, inclusive o arquivo de produtos, descrito posteriormente, que será processado na abertura e
+fechamento do caixa.
+
+---------------------------Feito 1-------------------------------
+
+2. Inicialmente, o programa deverá abrir o caixa e ler um arquivo de produtos no formato CSV (produtos.csv) com os dados abaixo e armazenar em uma lista de produtos. Cada produto tem um id,
+um nome, a quantidade em estoque e o seu preço. Não deverá ser utilizado estruturas do tipo dicionário, apenas listas. Também não deve ser utilizado o conceito de Orientação a Objetos, ou
+seja, classes.
+
+1,Produto 1,1,10
+2,Produto 2,2,20
+3,Produto 3,3,30
+4,Produto 4,4,40
+5,Produto 5,5,50
+---------------------------Feito 2-------------------------------
+
+3. Afinal do programa, ou seja, no fechamento do caixa, a lista de produtos deverá ser gravada no mesmo arquivo com as alterações feitas durante o processamento, que serão detalhadas nos
+próximos itens.
+
+4. Após a abertura do caixa, o atendente poderá realizar o atendimento de vários clientes. Para cada cliente, o programa deverá exibir a opção de “Iniciar atendimento” e ao final do atendimento
+exibir a opção “Finalizar atendimento”.
+
+5. Cada cliente, deverá ser identicado como “Cliente #”, onde # deverá ser o número do cliente atendido. Por exemplo, o primeiro cliente deverá ser identicado como “Cliente 1”, o segundo como
+“Cliente 2” e assim por diante.
+
+6. Para cada cliente, o atendente deve inserir uma lista de itens referentes a cada produto comprado. Cada item deve ser armazenado em uma lista de itens que deve conter o id do item, o nome
+do produto, a quantidade do produto, o preço unitário e o preço total do item.
+
+7. O preço total do item é a multiplicação do preço unitário do produto e a quantidade do produto comprado pelo cliente.
+
+8. Para cada item, o atendente deve inserir o id do produto e a quantidade a ser comprada. O id do produto deve constar da lista de produtos. Por exemplo, no arquivo produtos.csv, apresentado
+anteriormente, o id do produto deve estar entre um e cinco, caso contrário o programa deverá exibir uma mensagem de erro “Erro: produto não cadastrado.
+
+9. A quantidade de produtos comprados deve ser maior que zero, caso contrário o programa deverá exibir uma mensagem de erro “Erro: quantidade deve ser maior que zero”. Não se preocupe se a
+quantidade de produtos no estoque estará disponível para a compra.
+
+10. Para cada item comprado, o programa deverá dar a baixa no estoque, ou seja, subtrair a quantidade do produto comprado da lista de produtos.
+
+11. Quando o caixa nalizar o atendimento de um cliente, o programa deverá exibir uma “nota scal” com as informações abaixo. Para formatar os dados de saída em forma de tabela, você pode
+utilizar a formatação do próprio Python ou utilizar um pacote que facilite esse processo. Nos exemplos abaixo, foi utilizado o pacote Tabulate.
+
+12. Quando o atendente fechar o caixa, o programa deverá exibir uma lista de clientes atendidos com o total de compra de cada cliente e o total de vendas realizadas, como no exemplo abaixo.
+
+13. Além disso, o programa deverá exibir uma lista de produtos que estejam sem estoque, ou seja, a quantidade do produto igual a zero. Considerando os exemplos anteriores, o programa exibirá a
+saída abaixo:
+
+14. Finalmente, o programa deverá gravar o arquivo de produtos atualizado, ou seja, com o novo estoque de cada produto vendido.
+
+15. O sistema considerou que apenas um caixa estava operando no supermercado. Cite um problema caso houvesse mais de um caixa operando ao mesmo tempo no supermercado?
+
+16. Qual seria uma possível solução para o problema anterior considerando o conteúdo apresentado no bloco?
+
+
