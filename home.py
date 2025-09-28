@@ -8,13 +8,20 @@ cliente_num = 0
 
 print("====== ATENDIMENTO INICIADO ======")
 
-#  while True:
-#      cliente_num += 1
-#      print(f"Cliente número: {cliente_num}")
-     
-     
-print(tools.confirmar_compra(estoque))
-         
+  while True:
+      cliente_num += 1
+      
+      itens_comprados = tools.confirmar_compra(estoque)
+      tools.gerar_nota_fiscal(cliente_num, estoque, itens_comprados)
+      
+      if tools.verificar_escolha("Deseja atender o próximo cliente?") == "s":
+          continue
+        else:
+            print("====== ATENDIMENTO FINALIZADO ======")
+            break
+
+
+
 
 
 

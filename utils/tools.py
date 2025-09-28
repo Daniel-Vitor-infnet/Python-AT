@@ -23,23 +23,17 @@ def verificar_escolha(msg):
 
 
 def verificar_estoque(estoque, produto_id, qtd):
-    #print(estoque)
     for produto in estoque:
-      
         if produto[0] == produto_id:
-            if produto[2] <= qtd:
-                return True
-            else:
-                return False
+            return bool(produto[2] >= qtd)
             
             
 def confirmar_compra(estoque):
     produtos_comprados = []
     while True:
+        
         id_produto = verificar_id()
-        
         qtd = int(input("Digite a quantidade do produto: "))
-        
         qtd_produto = verificar_estoque(estoque, id_produto, qtd)
         
         if not qtd_produto:
@@ -56,4 +50,26 @@ def confirmar_compra(estoque):
         else:
             return produtos_comprados
         
+        
+def gerar_nota_fiscal(estoque, produtos_comprados):
+    total = 0
+    lista_produtos = []
     
+    for item in produtos_comprados:
+        id_produto = item[0]
+        qtd = item[1]
+        for produto in estoque:
+            if produto[0] == id_produto:
+                preco = produto[3]
+                subtotal = preco * qtd
+                total += subtotal
+                lista_produtos.append((id_produto, produto[1], qtd, preco, subtotal))
+
+    print(f"Cliente número: {cliente_num}")
+    print(datetime.now().strftime("%d/%m/%Y %H:%M")) # A data n lembrava peguei da net memu
+    print("====== NOTA FISCAL ======")
+    print(tabulate(lista_produtos, headers=["ID", "Produto", "Quantidade", "Preço Unitário", "Subtotal"], tablefmt="fancy_grid"))
+    print(f"Quantidade de Itens: {len(produtos_comprados)}")
+    print(f"Total: R$ {total:.2f}")
+
+    return lista_produtos
