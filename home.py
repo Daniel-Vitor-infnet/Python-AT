@@ -11,8 +11,10 @@ print("====== ATENDIMENTO INICIADO ======")
 #  while True:
 #      cliente_num += 1
 #      print(f"Cliente número: {cliente_num}")
-#      id_procuto = tools.verificar_id()
-#      qtd_produto = tools.verificar_estoque()
      
-tools.confirmar_compra(estoque)
+     
+print(tools.confirmar_compra(estoque))
+         
+
+
 

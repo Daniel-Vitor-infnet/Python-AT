@@ -12,17 +12,29 @@ def verificar_id():
         else:
             print("ID inválido. Digite um ID do produto entre 1 e 5: ")
 
+
+def verificar_escolha(msg):
+    while True:
+        escolha = input(f"{msg} (s/n): ").lower()
+        if escolha in ["s", "n"]:
+            return escolha
+        else:
+            print("Opção inválida. Digite 's' para sim ou 'n' para não.")
+
+
 def verificar_estoque(estoque, produto_id, qtd):
+    #print(estoque)
     for produto in estoque:
       
         if produto[0] == produto_id:
-            produto[2] -= qtd
-            print("Batata Tem no estoque!")
-            return True
-    print("Batata não tem no estoque!")
-    return False
-
+            if produto[2] <= qtd:
+                return True
+            else:
+                return False
+            
+            
 def confirmar_compra(estoque):
+    produtos_comprados = []
     while True:
         id_produto = verificar_id()
         
@@ -31,12 +43,17 @@ def confirmar_compra(estoque):
         qtd_produto = verificar_estoque(estoque, id_produto, qtd)
         
         if not qtd_produto:
-            print("Quantidade indisponível no estoque. Abaixo vou enviar o estoque atualizado para fazer a escolha correta.")
-            exibir_estoque(estoque)
+            print("Quantidade indisponível no estoque.")
+            if verificar_escolha("Deseja verificar o estoque?") == "s":
+                exibir_estoque(estoque)
             continue
         else:
-            return [id_produto, qtd]
+            produtos_comprados.append([id_produto, qtd])
         
-        
+        opcao = verificar_escolha("Deseja adicionar mais produtos?")
+        if opcao == "s":
+            continue
+        else:
+            return produtos_comprados
         
     
