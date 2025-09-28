@@ -4,19 +4,22 @@ def exibir_estoque(estoque):
     print("====== ESTOQUE DE PRODUTOS ======")
     print(tabulate(estoque, headers=["ID", "Nome", "Quantidade", "Preço"], tablefmt="fancy_grid"))
 
-def verificar_id(id):
+def verificar_id():
     while True:
+        id = int(input("Digite o ID do produto: "))
         if id >= 1 and id <= 5:
             return id
         else:
-            id = int(input("ID inválido. Digite um ID do produto entre 1 e 5: "))
+            print("ID inválido. Digite um ID do produto entre 1 e 5: ")
 
 def verificar_estoque(estoque, produto_id, qtd):
     for produto in estoque:
       
         if produto[0] == produto_id:
             produto[2] -= qtd
+            print("Batata Tem no estoque!")
             return True
+    print("Batata não tem no estoque!")
     return False
 
 def confirmar_compra(estoque):
