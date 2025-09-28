@@ -1,4 +1,5 @@
 from tabulate import tabulate
+from datetime import datetime
 
 def exibir_estoque(estoque):
     print("====== ESTOQUE DE PRODUTOS ======")
@@ -28,6 +29,16 @@ def verificar_estoque(estoque, produto_id, qtd):
             return bool(produto[2] >= qtd)
             
             
+# Eu até ia fazer, mas tava ficando tarde e achei excessivo
+            
+# def verificar_produto_duplicado(produtos_comprados, produto_id):
+#     for item in produtos_comprados:
+#         if item[0] == produto_id:
+#             if verificar_escolha("Produto já adicionado. Deseja atualizar a quantidade?") == "s":
+                
+            
+            
+            
 def confirmar_compra(estoque):
     produtos_comprados = []
     while True:
@@ -51,7 +62,7 @@ def confirmar_compra(estoque):
             return produtos_comprados
         
         
-def gerar_nota_fiscal(estoque, produtos_comprados):
+def gerar_nota_fiscal(cliente_num, estoque, produtos_comprados):
     total = 0
     lista_produtos = []
     
@@ -72,4 +83,12 @@ def gerar_nota_fiscal(estoque, produtos_comprados):
     print(f"Quantidade de Itens: {len(produtos_comprados)}")
     print(f"Total: R$ {total:.2f}")
 
-    return lista_produtos
+    return [f"Cliente número: {cliente_num}", total]
+
+
+def calcular_total_vendas(vendas):
+    total_vendas = 0
+    for cliente in vendas:
+        total_vendas += cliente[1]
+    
+    return print(f"Total de Vendas do Dia: R$ {total_vendas:.2f}")

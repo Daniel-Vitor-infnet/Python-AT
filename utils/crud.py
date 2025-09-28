@@ -2,7 +2,6 @@ ARQ = "C:/Users/NoobSupremo/Desktop/Backup (Pc)/Faculdade/Python/Programação c
 
 def ler_arquivo():
 
-
     produtos = []
     try:
         with open(ARQ, "r", encoding="utf-8") as arquivo:
@@ -16,6 +15,14 @@ def ler_arquivo():
         print(f"Erro ao ler o arquivo: {ex}")
     return produtos
 
+def update_arquivo(estoque, compra_feita): #Sei que n existe "update" no csv, porém achei a propriado.
+    for produto in estoque:
+        for item in compra_feita:
+            if produto[0] == item[0]:
+                produto[2] -= item[1]
+        
+    return estoque
+    
 
 def salvar_arquivo(produtos):
     try:
