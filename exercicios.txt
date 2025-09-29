@@ -17,6 +17,8 @@ seja, classes.
 3. Afinal do programa, ou seja, no fechamento do caixa, a lista de produtos deverá ser gravada no mesmo arquivo com as alterações feitas durante o processamento, que serão detalhadas nos
 próximos itens.
 
+---------------------------Feito 3-------------------------------
+
 4. Após a abertura do caixa, o atendente poderá realizar o atendimento de vários clientes. Para cada cliente, o programa deverá exibir a opção de “Iniciar atendimento” e ao final do atendimento
 exibir a opção “Finalizar atendimento”.
 
@@ -51,7 +53,7 @@ quantidade de produtos no estoque estará disponível para a compra.
 
 R: Antes de ler o enunciado já havia feito a verificação de estoque, então n vejo sentido em remover é apenas um extra.
 
----------------------------Feito 8-------------------------------
+---------------------------Feito 9-------------------------------
 
 
 10. Para cada item comprado, o programa deverá dar a baixa no estoque, ou seja, subtrair a quantidade do produto comprado da lista de produtos.
@@ -74,8 +76,20 @@ saída abaixo:
 
 14. Finalmente, o programa deverá gravar o arquivo de produtos atualizado, ou seja, com o novo estoque de cada produto vendido.
 
+---------------------------Feito 14-------------------------------
+
+
 15. O sistema considerou que apenas um caixa estava operando no supermercado. Cite um problema caso houvesse mais de um caixa operando ao mesmo tempo no supermercado?
 
+R: Sinceramente nem sei como responder, pois o sistema todo foi feito para apenas um caixa. Multiplos acessos bugaria tudo e n funcionaria.
+
+---------------------------Feito 15-------------------------------
+
+
 16. Qual seria uma possível solução para o problema anterior considerando o conteúdo apresentado no bloco?
+
+R: Teria que fazer um sistema por id do caixa para cada um ser individual e ser possível usos simultaneos.
+
+---------------------------Feito 16-------------------------------
 
 

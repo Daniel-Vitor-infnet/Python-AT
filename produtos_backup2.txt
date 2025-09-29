@@ -1,4 +1,4 @@
-1,Arroz Tipo 1,50,25.90
+1,Arroz,50,25.90
 2,Feijão Carioca,40,8.50
 3,Macarrão Espaguete,60,5.99
 4,Açúcar Refinado,45,4.80
