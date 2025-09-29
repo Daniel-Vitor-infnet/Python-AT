@@ -20,11 +20,20 @@ próximos itens.
 4. Após a abertura do caixa, o atendente poderá realizar o atendimento de vários clientes. Para cada cliente, o programa deverá exibir a opção de “Iniciar atendimento” e ao final do atendimento
 exibir a opção “Finalizar atendimento”.
 
+R: Bom, automaticamente, quando executa o programa é o "início do atendimento". Quando o programa pergunta "Deseja atender o próximo cliente?", se a resposta for "sim", será o "início do atendimento" e 
+se a resposta for "não", será o "atendimento finalizado".
+
+---------------------------Feito 4-------------------------------
+
 5. Cada cliente, deverá ser identicado como “Cliente #”, onde # deverá ser o número do cliente atendido. Por exemplo, o primeiro cliente deverá ser identicado como “Cliente 1”, o segundo como
 “Cliente 2” e assim por diante.
 
+---------------------------Feito 5-------------------------------
+
 6. Para cada cliente, o atendente deve inserir uma lista de itens referentes a cada produto comprado. Cada item deve ser armazenado em uma lista de itens que deve conter o id do item, o nome
 do produto, a quantidade do produto, o preço unitário e o preço total do item.
+
+---------------------------Feito 6-------------------------------
 
 7. O preço total do item é a multiplicação do preço unitário do produto e a quantidade do produto comprado pelo cliente.
 

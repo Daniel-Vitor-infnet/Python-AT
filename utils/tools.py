@@ -76,14 +76,14 @@ def gerar_nota_fiscal(cliente_num, estoque, produtos_comprados):
                 total += subtotal
                 lista_produtos.append((id_produto, produto[1], qtd, preco, subtotal))
 
+    print("====== NOTA FISCAL ======\n")
     print(f"Cliente número: {cliente_num}")
     print(datetime.now().strftime("%d/%m/%Y %H:%M")) # A data n lembrava peguei da net memu
-    print("====== NOTA FISCAL ======")
     print(tabulate(lista_produtos, headers=["ID", "Produto", "Quantidade", "Preço Unitário", "Subtotal"], tablefmt="fancy_grid"))
-    print(f"Quantidade de Itens: {len(produtos_comprados)}")
+    print(f"\nQuantidade de Itens: {len(produtos_comprados)}")
     print(f"Total: R$ {total:.2f}")
 
-    return [f"Cliente número: {cliente_num}", total]
+    return [f"Cliente : {cliente_num}", total]
 
 
 def calcular_total_vendas(vendas):
