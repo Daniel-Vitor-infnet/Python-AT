@@ -37,21 +37,40 @@ do produto, a quantidade do produto, o preço unitário e o preço total do item
 
 7. O preço total do item é a multiplicação do preço unitário do produto e a quantidade do produto comprado pelo cliente.
 
+---------------------------Feito 7-------------------------------
+
 8. Para cada item, o atendente deve inserir o id do produto e a quantidade a ser comprada. O id do produto deve constar da lista de produtos. Por exemplo, no arquivo produtos.csv, apresentado
 anteriormente, o id do produto deve estar entre um e cinco, caso contrário o programa deverá exibir uma mensagem de erro “Erro: produto não cadastrado.
+
+R: Eu ia criar uma regra baseado no tamanho da lista, porém como o enunciado limitou a 5 itens apenas e o id de 1 até 5, então fiz uma verificação simples de 1 até 5.
+
+---------------------------Feito 8-------------------------------
 
 9. A quantidade de produtos comprados deve ser maior que zero, caso contrário o programa deverá exibir uma mensagem de erro “Erro: quantidade deve ser maior que zero”. Não se preocupe se a
 quantidade de produtos no estoque estará disponível para a compra.
 
+R: Antes de ler o enunciado já havia feito a verificação de estoque, então n vejo sentido em remover é apenas um extra.
+
+---------------------------Feito 8-------------------------------
+
+
 10. Para cada item comprado, o programa deverá dar a baixa no estoque, ou seja, subtrair a quantidade do produto comprado da lista de produtos.
 
-11. Quando o caixa nalizar o atendimento de um cliente, o programa deverá exibir uma “nota scal” com as informações abaixo. Para formatar os dados de saída em forma de tabela, você pode
+---------------------------Feito 10-------------------------------
+
+11. Quando o caixa finalizar o atendimento de um cliente, o programa deverá exibir uma “nota scal” com as informações abaixo. Para formatar os dados de saída em forma de tabela, você pode
 utilizar a formatação do próprio Python ou utilizar um pacote que facilite esse processo. Nos exemplos abaixo, foi utilizado o pacote Tabulate.
+
+---------------------------Feito 11-------------------------------
 
 12. Quando o atendente fechar o caixa, o programa deverá exibir uma lista de clientes atendidos com o total de compra de cada cliente e o total de vendas realizadas, como no exemplo abaixo.
 
+---------------------------Feito 12-------------------------------
+
 13. Além disso, o programa deverá exibir uma lista de produtos que estejam sem estoque, ou seja, a quantidade do produto igual a zero. Considerando os exemplos anteriores, o programa exibirá a
 saída abaixo:
+
+---------------------------Feito 13-------------------------------
 
 14. Finalmente, o programa deverá gravar o arquivo de produtos atualizado, ou seja, com o novo estoque de cada produto vendido.
 

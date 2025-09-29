@@ -18,11 +18,12 @@ while True:
     
     clientes_totais = tools.gerar_nota_fiscal(cliente_num, estoque, itens_comprados)
     
+    estoque = crud.update_arquivo(estoque, itens_comprados)
+        
     expediente_fechado.append(clientes_totais)
 
 
     if tools.verificar_escolha("Deseja atender o próximo cliente?") == "s":
-        estoque = crud.update_arquivo(estoque, itens_comprados)
         continue
     else:
         
@@ -31,4 +32,7 @@ while True:
         
         print(tabulate(expediente_fechado, headers=["Cliente", "Total"], tablefmt="fancy_grid"))
         tools.calcular_total_vendas(expediente_fechado)
+        
+        tools.produtos_sem_estoque(estoque)
+
         break

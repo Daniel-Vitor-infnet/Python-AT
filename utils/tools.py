@@ -13,6 +13,12 @@ def verificar_id():
         else:
             print("ID inválido. Digite um ID do produto entre 1 e 5: ")
 
+def verificar_id_duplicado(produtos_comprados, produto_id): # Eu ia fazer uma função pra atualizar a quantidade, mas me enbananei e desisti por causa do tempo.
+    for item in produtos_comprados:
+        if item[0] == produto_id:
+            return True
+    return False
+
 
 def verificar_escolha(msg):
     while True:
@@ -27,23 +33,20 @@ def verificar_estoque(estoque, produto_id, qtd):
     for produto in estoque:
         if produto[0] == produto_id:
             return bool(produto[2] >= qtd)
-            
-            
-# Eu até ia fazer, mas tava ficando tarde e achei excessivo
-            
-# def verificar_produto_duplicado(produtos_comprados, produto_id):
-#     for item in produtos_comprados:
-#         if item[0] == produto_id:
-#             if verificar_escolha("Produto já adicionado. Deseja atualizar a quantidade?") == "s":
-                
-            
-            
+                 
             
 def confirmar_compra(estoque):
     produtos_comprados = []
     while True:
         
         id_produto = verificar_id()
+        
+        if verificar_id_duplicado(produtos_comprados, id_produto): # Eu ia fazer uma função pra atualizar a quantidade, mas me enbananei e desisti por causa do tempo.
+            print("Produto já adicionado. Escolha outro produto.")
+            if verificar_escolha("Deseja verificar o estoque?") == "s":
+                exibir_estoque(estoque)
+            continue
+        
         qtd = int(input("Digite a quantidade do produto: "))
         qtd_produto = verificar_estoque(estoque, id_produto, qtd)
         
@@ -92,3 +95,14 @@ def calcular_total_vendas(vendas):
         total_vendas += cliente[1]
     
     return print(f"Total de Vendas do Dia: R$ {total_vendas:.2f}")
+
+
+def produtos_sem_estoque(estoque):
+    sem_estoque = []
+    for produto in estoque:
+        if produto[2] == 0:
+            sem_estoque.append(produto)
+
+    print("\nProdutos sem estoque:")
+    print(tabulate(sem_estoque, headers=["ID", "Nome", "Quantidade", "Preço"], tablefmt="fancy_grid"))
+    return 
